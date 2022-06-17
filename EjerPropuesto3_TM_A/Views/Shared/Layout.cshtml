@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TRABAJO FINAL - UNIDAD I</title>
+    <link href="~/Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Assets/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Highcharts -->
+    <script src="~/Assets/js/highcharts.js"></script>
+    <script src="~/Assets/js/highcharts-3d.js"></script>
+    <script src="~/Assets/js/highcharts-more.js"></script>
+    <script src="~/Assets/js/cylinder.js"></script>
+    <script src="~/Assets/js/funnel3d.js"></script>
+    <script src="~/Assets/js/pyramid3d.js"></script>
+    <script src="~/Assets/js/exporting.js"></script>
+    <script src="~/Assets/js/export-data.js"></script>
+    <script src="~/Assets/js/offline-exporting.js"></script>
+    <script src="~/Assets/js/accessibility.js"></script>
+    <script src="~/Assets/js/item-series.js"></script>
+    <script src="~/Assets/js/venn.js"></script>
+    <script src="~/Assets/js/variwide.js"></script>
+    <script src="~/Assets/js/series-label.js"></script>
+
+
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../Default/Index">Trabajo Final II Unidad</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../Enunciados/Index">Enunciados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/EPIS-UPT/proyectogrupal_u2-epis-taquila-merino-chambilla-sivirichi">Github</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ejercicios
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="../Resultado/Grafico1">Grafico 1</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../Resultado/Grafico2">Grafico 2</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../Resultado/Grafico3">Grafico 3</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../Resultado/Grafico4">Grafico 4</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="../Resultado/Grafico5">Grafico 5</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+
+        @RenderBody()
+    </div>
+    <script src="~/Assets/js/bootstrap.min.js"></script>
+</body>
+</html>

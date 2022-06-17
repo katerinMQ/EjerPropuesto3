@@ -1,0 +1,118 @@
+﻿@model List<EjerPropuesto3_TM_A.Models.RESULTADO>
+@{
+    ViewBag.Title = "Grafico1";
+
+    String nombre = "";
+    int valor = 0;
+    double cantidad = 0;
+    double total = 0;
+    double porcentaje = 0, sumaporcentaje = 0;
+
+    string data = "";
+}
+
+
+<center>
+    <h2 class="card-header">
+        Generar Grafico 1
+    </h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Nº</td>
+                    <td>Resultado del Estudiante</td>
+                    <td>Criterios de Desempeño</td>
+                    <td>Porcentaje</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                    total = total + m.CRITERIO.Count();
+                }
+
+                @foreach (var m in Model)
+                {
+
+                    porcentaje = 0;
+                    cantidad++;
+
+
+                    valor = m.CRITERIO.Count();
+
+                    porcentaje = ((valor * 100) / total);
+                    porcentaje = Math.Round(porcentaje, 2);
+                    sumaporcentaje = sumaporcentaje + porcentaje;
+
+
+                    valor = m.CRITERIO.Count();
+                    nombre = m.NOMBRE;
+
+                    data = data + "['" + nombre + "'," + valor + "," + "],";
+
+
+                    <tr>
+                        <td>@(m.ID)</td>
+                        <td>@(m.NOMBRE)</td>
+                        <td>@(m.CRITERIO.Count())</td>
+                        <td>@porcentaje %</td>
+                    </tr>
+
+                }
+                <tr>
+                    <td colspan="2">Total: </td>
+                    <th>@(total) </th>
+                    <th>@sumaporcentaje</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+    @(data)
+
+    <br />
+    <figure class="highcharts-figure">
+        <div id="container" style="min-width:310px;height:400px;margin:0 auto"></div>
+    </figure>
+</center>
+
+<div id="container" style="min-width: 320px; height:400px; margin:0 auto">
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {
+            Highcharts.chart('container', {
+                chart: {
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45
+                    }
+                },
+                title: {
+                    text: 'Grafico Estadistico'
+                },
+                subtitle: {
+                    text: 'Criterios'
+                },
+                plotOptions: {
+                    pie: {
+                        innerSize: 100,
+                        depth: 45
+                    }
+                },
+                series: [{
+                    name: 'Cantidad de Criterios',
+                    data: [
+                        @Html.Raw((String)data)
+                    ]
+                }]
+            });
+        });
+    });
+</script>

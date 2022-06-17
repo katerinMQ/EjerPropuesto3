@@ -76,3 +76,7 @@ C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\obj\Debug
 C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\obj\Debug\EjerPropuesto3_TM_A.csproj.CopyComplete
 C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\obj\Debug\EjerPropuesto3_TM_A.dll
 C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\obj\Debug\EjerPropuesto3_TM_A.pdb
+C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\bin\EntityFramework.dll
+C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\bin\EntityFramework.SqlServer.dll
+C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\bin\EntityFramework.xml
+C:\Users\KATHERIN\source\repos\EjerPropuesto3_TM_A\EjerPropuesto3_TM_A\bin\EntityFramework.SqlServer.xml

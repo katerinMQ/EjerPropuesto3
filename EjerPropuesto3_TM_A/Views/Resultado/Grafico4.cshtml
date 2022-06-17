@@ -1,0 +1,137 @@
+﻿@model List<EjerPropuesto3_TM_A.Models.RESULTADO>
+@{
+    ViewBag.Title = "Grafico4";
+
+    String nombre = "";
+    int valor = 0;
+    double cantidad = 0;
+    double total = 0;
+    double porcentaje = 0, sumaporcentaje = 0;
+
+    string data = "";
+    string categorias = "";
+    string data2 = "";
+
+}
+
+
+<center>
+    <h2 class="card-header">
+        Generar Grafico 3
+    </h2>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Nº</td>
+                    <td>Resultado del Estudiante</td>
+                    <td>Criterios de Desempeño</td>
+                    <td>Porcentaje</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var m in Model)
+                {
+                    total = total + m.CRITERIO.Count();
+                }
+
+                @foreach (var m in Model)
+                {
+
+                    porcentaje = 0;
+                    cantidad++;
+
+
+                    valor = m.CRITERIO.Count();
+
+                    porcentaje = ((valor * 100) / total);
+                    porcentaje = Math.Round(porcentaje, 2);
+                    sumaporcentaje = sumaporcentaje + porcentaje;
+
+
+                    valor = m.CRITERIO.Count();
+                    nombre = m.NOMBRE;
+
+                    // ['Norway', 50.2, 335504],
+
+                    data = data + "['" + nombre + "'," + valor + "," + porcentaje+ "],";
+
+
+                    <tr>
+                        <td>@(m.ID)</td>
+                        <td>@(m.NOMBRE)</td>
+                        <td>@(m.CRITERIO.Count())</td>
+                        <td>@porcentaje %</td>
+                    </tr>
+
+                }
+                <tr>
+                    <td colspan="2">Total: </td>
+                    <th>@(total) </th>
+                    <th>@sumaporcentaje</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br />
+    <figure class="highcharts-figure">
+        <div id="container" style="min-width:310px;height:400px;margin:0 auto"></div>
+    </figure>
+</center>
+
+<div id="container" style="min-width: 320px; height:400px; margin:0 auto">
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $(document).ready(function () {
+            Highcharts.chart('container', {
+
+                chart: {
+                    type: 'variwide'
+                },
+
+                title: {
+                    text: 'Grafico de Resultado Criterios de Desempeño'
+                },
+
+                subtitle: {
+                    text: 'Cantidad de Criterios'
+                },
+
+                xAxis: {
+                    type: 'category'
+                },
+
+                caption: {
+                    text: ''
+                },
+
+                legend: {
+                    enabled: false
+                },
+
+                series: [{
+                    name: '',
+                    data: [
+                        @Html.Raw((String)data)
+
+                    ],
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y:.0f}'
+                    },
+                    tooltip: {
+                        pointFormat: 'Cantidad de Criterios: <b> {point.y}</b><br>' +
+                            'Porcentaje: <b>{point.z} %</b><br>'
+                    },
+                    colorByPoint: true
+                }]
+
+            });
+        });
+    });
+</script>

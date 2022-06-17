@@ -43,7 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -88,6 +96,77 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\highcharts.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bootstrap.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bootstrap.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bootstrap4.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bootstrap5.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bootstrap5.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bulma.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.bulma.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.dataTables.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.dataTables.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.foundation.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.foundation.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.jqueryui.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.jqueryui.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.semanticui.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\dataTables.semanticui.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\jquery.dataTables.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\css\jquery.dataTables.min.css" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\images\sort_asc.png" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\images\sort_asc_disabled.png" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\images\sort_both.png" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\images\sort_desc.png" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\images\sort_desc_disabled.png" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bootstrap.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bootstrap.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bootstrap4.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bootstrap5.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bootstrap5.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bulma.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.bulma.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.dataTables.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.dataTables.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.foundation.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.foundation.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.jqueryui.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.jqueryui.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.semanticui.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\dataTables.semanticui.min.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\jquery.dataTables.js" />
+    <Content Include="Assets\Datatables\DataTables-1.12.0\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\Datatables\datatables.css" />
+    <Content Include="Assets\Datatables\datatables.js" />
+    <Content Include="Assets\Datatables\datatables.min.css" />
+    <Content Include="Assets\Datatables\datatables.min.js" />
+    <Content Include="Assets\js\accessibility.js" />
+    <Content Include="Assets\js\bootstrap.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\cylinder.js" />
+    <Content Include="Assets\js\export-data.js" />
+    <Content Include="Assets\js\exporting.js" />
+    <Content Include="Assets\js\funnel3d.js" />
+    <Content Include="Assets\js\highcharts-3d.js" />
+    <Content Include="Assets\js\highcharts-more.js" />
+    <Content Include="Assets\js\highcharts.js" />
+    <Content Include="Assets\js\ini.js" />
+    <Content Include="Assets\js\item-series.js" />
+    <Content Include="Assets\js\jquery-3.6.0.min.js" />
+    <Content Include="Assets\js\jquery.form.js" />
+    <Content Include="Assets\js\jquery.js" />
+    <Content Include="Assets\js\jquery.validate.min.js" />
+    <Content Include="Assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\js\offline-exporting.js" />
+    <Content Include="Assets\js\pyramid3d.js" />
+    <Content Include="Assets\js\series-label.js" />
+    <Content Include="Assets\js\variwide.js" />
+    <Content Include="Assets\js\venn.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="img\ejercicio3.png" />
     <Content Include="img\logo.png" />
@@ -96,15 +175,30 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ResultadoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CRITERIO.cs" />
+    <Compile Include="Models\CRITERIO_CURSO.cs" />
+    <Compile Include="Models\CURSO.cs" />
+    <Compile Include="Models\ModeloEjercicio3.cs" />
+    <Compile Include="Models\PLAN_ESTUDIO.cs" />
+    <Compile Include="Models\REGISTRO.cs" />
+    <Compile Include="Models\REGISTRO_CRITERIO.cs" />
+    <Compile Include="Models\RESULTADO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Default\Index.cshtml" />
+    <Content Include="Views\Resultado\Grafico1.cshtml" />
+    <Content Include="Views\Resultado\Grafico2.cshtml" />
+    <Content Include="Views\Resultado\Grafico3.cshtml" />
+    <Content Include="Views\Resultado\Grafico4.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -114,7 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
